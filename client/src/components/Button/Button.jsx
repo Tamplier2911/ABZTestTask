@@ -1,13 +1,13 @@
-import "./Button.scss";
+// import "./Button.scss";
 import React from "react";
 
 // js rendering css
-import {} from "./ButtonStyles";
+import { ButtonComponent } from "./ButtonStyles";
 
 const Button = ({ text, type, action }) => (
-  <button type={type} onClick={() => action()} className="button">
+  <ButtonComponent type={type} onClick={() => action()}>
     {text}
-  </button>
+  </ButtonComponent>
 );
 
 export default Button;

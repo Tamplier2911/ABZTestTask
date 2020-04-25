@@ -29,11 +29,23 @@
   --cl-scroll-bg: #fff;
   --cl-scroll-shadow: rgba(0, 0, 0, 0.486);
 
+  // MODAL
+  --cl-modal-bg: rgba(0, 0, 0, 0.541);
+  --cl-modal-line: #d8d8d8;
+
+  // SIDENAV
+  --cl-sidenav-bg: rgba(0, 0, 0, 0.541);
+  --cl-sidenav-line: #d8d8d8;
+
   // BTN
   --cl-btn-hover: #d24335;
   --cl-btn-disabled: #d7d7d7;
   --cl-btn-text: #a6a5a5;
 }
+
+// Z INDEXES:
+// MODAL 100
+// SIDENAV 50
 
 // UNIVERSAL
 *,
@@ -97,4 +109,12 @@ code {
   // background-color: var(--cl-primary);
   background-color: var(--cl-primary);
   color: var(--cl-white);
+}
+
+#sidenav {
+  position: relative;
+}
+
+#modal {
+  position: relative;
 }

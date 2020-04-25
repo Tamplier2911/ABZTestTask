@@ -1,6 +1,11 @@
-import "./HeadlineSmall.scss";
+// import "./HeadlineSmall.scss";
 import React from "react";
 
-const HeadlineSmall = ({ text }) => <h3 className="headlineSmall">{text}</h3>;
+// js render css
+import { HeadlineSmallComponent } from "./HeadlineSmallStyles";
+
+const HeadlineSmall = ({ text }) => (
+  <HeadlineSmallComponent>{text}</HeadlineSmallComponent>
+);
 
 export default HeadlineSmall;

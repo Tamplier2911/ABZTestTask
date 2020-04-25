@@ -1,0 +1,120 @@
+/*
+
+.sidenav {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-row-gap: 2rem;
+  width: 30rem;
+  height: 100vh;
+  background-color: var(--cl-white);
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  animation: animateSidenav 0.5s;
+
+  &::-webkit-scrollbar {
+    width: 0.2rem;
+    background-color: var(--cl-scroll-bg);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(
+      to bottom,
+      var(--cl-primary),
+      var(--cl-secodary)
+    );
+    border-radius: 5rem;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px var(--cl-scroll-shadow);
+    box-shadow: inset 0 0 6px var(--cl-scroll-shadow);
+  }
+
+  &__header {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    animation: animateSidenavContent 0.5s 0.4s;
+    animation-fill-mode: backwards;
+
+    &--svg {
+      //   margin: 2rem 0rem 0rem 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-row-gap: 2rem;
+    animation: animateSidenavContent 0.5s 0.6s;
+    animation-fill-mode: backwards;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--cl-sidenav-line);
+    }
+
+    &--ul {
+      display: grid;
+      grid-row-gap: 1.4rem;
+      list-style: none;
+    }
+
+    &--li {
+      margin-left: 2rem;
+      font-weight: bold;
+    }
+  }
+
+  &__mid {
+    display: grid;
+    grid-row-gap: 2rem;
+    animation: animateSidenavContent 0.5s 0.8s;
+    animation-fill-mode: backwards;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--cl-sidenav-line);
+    }
+  }
+
+  &__bot {
+    display: grid;
+    grid-row-gap: 2rem;
+    animation: animateSidenavContent 0.5s 1s;
+    animation-fill-mode: backwards;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 0.1rem;
+      background-color: var(--cl-sidenav-line);
+    }
+  }
+}
+
+@keyframes animateSidenav {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 30rem;
+  }
+}
+
+@keyframes animateSidenavContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+*/

@@ -1,0 +1,16 @@
+import styled from "styled-components";
+
+export const ParagraphComponent = styled.p`
+  color: var(--cl-white);
+  font-size: var(--font-p-uni-fs);
+  line-height: 1.55;
+  //   line-height: var(--font-p-uni-lh);
+
+  @media only screen and (max-width: 768px) {
+    line-height: var(--font-p-uni-lh);
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+`;

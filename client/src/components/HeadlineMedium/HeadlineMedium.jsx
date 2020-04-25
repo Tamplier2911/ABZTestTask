@@ -1,6 +1,11 @@
-import "./HeadlineMedium.scss";
+// import "./HeadlineMedium.scss";
 import React from "react";
 
-const HeadlineMedium = ({ text }) => <h2 className="headlineMedium">{text}</h2>;
+// js render css
+import { HeadlineMediumComponent } from "./HeadlineMediumStyles";
+
+const HeadlineMedium = ({ text }) => (
+  <HeadlineMediumComponent>{text}</HeadlineMediumComponent>
+);
 
 export default HeadlineMedium;

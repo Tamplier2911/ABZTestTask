@@ -6,6 +6,8 @@ import { Switch, Route } from "react-router-dom";
 // components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Sidenav from "./components/Sidenav/Sidenav";
+import Modal from "./components/Modal/Modal";
 
 // pages
 import LandingPage from "./pages/LandingPage/LandingPage";
@@ -33,8 +35,8 @@ function App() {
   return (
     <AppContainer>
       <Header width={width} />
-      {/* sidenav */}
-      {/* modal */}
+      <Sidenav />
+      <Modal />
       <AppMain>
         <Switch>
           <Route exact path="/" render={() => <LandingPage width={width} />} />

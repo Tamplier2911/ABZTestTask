@@ -1,6 +1,9 @@
-import "./Paragraph.scss";
+// import "./Paragraph.scss";
 import React from "react";
 
-const Paragraph = ({ text }) => <p className="paragraph">{text}</p>;
+// js render css
+import { ParagraphComponent } from "./ParagraphStyles";
+
+const Paragraph = ({ text }) => <ParagraphComponent>{text}</ParagraphComponent>;
 
 export default Paragraph;

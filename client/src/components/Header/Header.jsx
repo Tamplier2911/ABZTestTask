@@ -1,49 +1,53 @@
-import "./Header.scss";
+// import "./Header.scss";
 import React from "react";
+
+// redux
+import { connect } from "react-redux";
+import { toggleSidenav } from "../../redux/sidenav/sidenav.actions";
 
 // components
 import GenericLink from "../GenericLink/GenericLink";
 
-// svg
-import { ReactComponent as LogoSVG } from "../../assets/svg/logo.svg";
-import { ReactComponent as MenuSVG } from "../../assets/svg/menu icon.svg";
-
 // js rendering css
-import {} from "./HeaderStyles";
+import {
+  HeaderContainer,
+  HeaderContent,
+  HeaderLogo,
+  HeaderLogoSVG,
+  HeaderLinks,
+  HeaderUL,
+  HeaderLI,
+  HeaderBurger,
+  HeaderMenuSVG,
+} from "./HeaderStyles";
 
-const linkConstants = [
-  { path: "/", text: "About me" },
-  { path: "/", text: "Relationships" },
-  { path: "/", text: "Requirements" },
-  { path: "/", text: "Users" },
-  { path: "/", text: "Sign Up" },
-];
+import headerConstants from "./HeaderConstants";
 
-const Header = ({ width }) => {
+const Header = ({ width, toggleSidenav }) => {
   return (
-    <header className="header">
-      <div className="header__content">
-        <div className="header__content--logo">
-          <LogoSVG className="header_logosvg" />
-        </div>
+    <HeaderContainer>
+      <HeaderContent>
+        <HeaderLogo>
+          <HeaderLogoSVG />
+        </HeaderLogo>
         {width > 768 ? (
-          <div className="header__content--links">
-            <ul className="header__content--ul">
-              {linkConstants.map((link, i) => (
-                <li key={i} className="header__content--li">
+          <HeaderLinks>
+            <HeaderUL>
+              {headerConstants.map((link, i) => (
+                <HeaderLI key={i}>
                   <GenericLink {...link} />
-                </li>
+                </HeaderLI>
               ))}
-            </ul>
-          </div>
+            </HeaderUL>
+          </HeaderLinks>
         ) : (
-          <div className="header__content--burger">
-            <MenuSVG className="header__menusvg" />
-          </div>
+          <HeaderBurger onClick={() => toggleSidenav()}>
+            <HeaderMenuSVG />
+          </HeaderBurger>
         )}
-      </div>
-    </header>
+      </HeaderContent>
+    </HeaderContainer>
   );
 };
 
-export default Header;
+export default connect(null, { toggleSidenav })(Header);

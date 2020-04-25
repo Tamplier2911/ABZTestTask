@@ -1,9 +1,11 @@
-import "./HeadlineLarge.scss";
+// import "./HeadlineLarge.scss";
 import React from "react";
 
 // js rendering css
-import {} from "./HeadlineLargeStyles";
+import { HeadlineLargeComponent } from "./HeadlineLargeStyles";
 
-const HeadlineLarge = ({ text }) => <h1 className="headlineLarge">{text}</h1>;
+const HeadlineLarge = ({ text }) => (
+  <HeadlineLargeComponent>{text}</HeadlineLargeComponent>
+);
 
 export default HeadlineLarge;

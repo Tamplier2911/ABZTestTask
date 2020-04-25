@@ -1,12 +1,15 @@
-import "./GenericLink.scss";
+// import "./GenericLink.scss";
 import React from "react";
 
-import {} from "./GenericLinkStyles";
+import { GenericLinkComponent } from "./GenericLinkStyles";
 
-const GenericLink = ({ path, text }) => (
-  <a href={path} className="genericLink">
+const GenericLink = ({ path, text, action }) => (
+  <GenericLinkComponent
+    href={path}
+    onClick={(e) => (action ? action(e) : () => {})}
+  >
     {text}
-  </a>
+  </GenericLinkComponent>
 );
 
 export default GenericLink;
