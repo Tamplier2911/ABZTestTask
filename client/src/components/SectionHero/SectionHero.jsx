@@ -6,16 +6,20 @@ import HeadlineLarge from "../HeadlineLarge/HeadlineLarge";
 import Paragraph from "../Paragraph/Paragraph";
 import Button from "../Button/Button";
 
+// utils
+import getClient from "../../utils/getClient";
+
 // js rendering css
-import {} from "./SectionHeroStyles";
+import { SectionHeroContainer } from "./SectionHeroStyles";
 
 // constants
 import getRequiredContent from "./SectionHeroConstants";
 
 const SectionHero = ({ width }) => {
   const { header, paragraph, btn } = getRequiredContent(width);
+  const client = getClient(width);
   return (
-    <section className="hero">
+    <SectionHeroContainer client={client}>
       <div className="hero__left">
         <HeadlineLarge text={header} />
         <Paragraph text={paragraph} />
@@ -28,7 +32,7 @@ const SectionHero = ({ width }) => {
         />
       </div>
       <div className="hero__right"></div>
-    </section>
+    </SectionHeroContainer>
   );
 };
 
