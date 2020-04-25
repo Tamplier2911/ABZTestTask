@@ -1,0 +1,13 @@
+.genericLink {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: var(--cl-font);
+    transition: color 0.3s;
+  }
+
+  &:hover,
+  &:active {
+    color: var(--cl-primary);
+  }
+}
