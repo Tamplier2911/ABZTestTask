@@ -77,7 +77,7 @@ export const SidenavWindow = styled.div`
     background-image: linear-gradient(
       to bottom,
       var(--cl-primary),
-      var(--cl-secodary)
+      var(--cl-secondary)
     );
     border-radius: 5rem;
   }
@@ -127,4 +127,10 @@ export const SidenavUL = styled.ul`
 export const SidenavLI = styled.li`
   margin-left: 2rem;
   font-weight: bold;
+
+  & a {
+    &:hover {
+      color: var(--cl-sidenav-linkhover) !important;
+    }
+  }
 `;

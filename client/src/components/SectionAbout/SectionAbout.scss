@@ -1,11 +1,11 @@
 .about {
   display: grid;
-  padding-top: 14rem;
+  // padding-top: 14rem;
   grid-row-gap: 4.9rem;
   padding: 14rem 3rem 15rem 3rem;
 
   @media only screen and (max-width: 768px) {
-    padding: 11.5rem 2.3rem 15rem 2.3rem;
+    padding: 11.5rem 2.3rem 12.5rem 2.3rem;
     grid-row-gap: 6rem;
   }
   @media only screen and (max-width: 425px) {
@@ -130,6 +130,7 @@
         font-weight: bold;
         align-self: flex-start;
         color: var(--cl-primary) !important;
+        border-bottom: 0.1rem solid transparent;
         @media only screen and (max-width: 768px) {
           margin-top: 3.4rem;
         }
@@ -142,6 +143,8 @@
 
         &:hover {
           color: var(--cl-btn-hover) !important;
+          border-bottom: 0.1rem solid var(--cl-btn-hover);
+          transform: scale(1.1);
         }
       }
     }

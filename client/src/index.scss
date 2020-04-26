@@ -20,7 +20,7 @@
   // COLOR PALETTE
   // --cl-primary: #ef5b4c;
   --cl-primary: #de2b1a;
-  --cl-secodary: #007bff;
+  --cl-secondary: #007bff;
   --cl-font: #393939;
   --cl-white: #ffffff;
   --cl-bg: #f9f9f3;
@@ -37,9 +37,10 @@
   // SIDENAV
   --cl-sidenav-bg: rgba(0, 0, 0, 0.541);
   --cl-sidenav-line: #d8d8d8;
+  --cl-sidenav-linkhover: #1b4a8a;
 
   // BTN
-  --cl-btn-hover: #d24335;
+  --cl-btn-hover: #c71400;
   --cl-btn-disabled: #d7d7d7;
   --cl-btn-text: #a6a5a5;
 }
@@ -90,7 +91,7 @@ body {
     background-image: linear-gradient(
       to bottom,
       var(--cl-primary),
-      var(--cl-secodary)
+      var(--cl-secondary)
     );
     border-radius: 5rem;
   }

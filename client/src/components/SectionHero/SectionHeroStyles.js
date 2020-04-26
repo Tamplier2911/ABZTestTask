@@ -40,3 +40,58 @@ export const SectionHeroContainer = styled.section`
     padding: 2rem 2rem;
   }
 `;
+
+export const SectionHeroLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & h1 {
+    margin-top: 8.6rem;
+    @media only screen and (max-width: 768px) {
+      margin-top: 4.7rem;
+      max-width: 46rem;
+      letter-spacing: 0.23rem;
+    }
+
+    @media only screen and (max-width: 425px) {
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 360px) {
+      margin-top: 6.6rem;
+    }
+  }
+
+  & p {
+    margin-top: 2.2rem;
+    @media only screen and (max-width: 768px) {
+      font-size: 1.6rem;
+      margin-top: 3rem;
+      max-width: 50rem;
+      letter-spacing: 0.085rem;
+    }
+
+    @media only screen and (max-width: 425px) {
+      text-align: center;
+    }
+
+    @media only screen and (max-width: 360px) {
+      margin-top: 2.5rem;
+      max-width: 42rem;
+      letter-spacing: 0.095rem;
+    }
+  }
+
+  & button {
+    margin-top: 3.3rem;
+    @media only screen and (max-width: 768px) {
+      margin-top: 3.7rem;
+    }
+
+    @media only screen and (max-width: 425px) {
+      margin: 3.2rem auto 0 auto;
+    }
+  }
+`;
+
+export const SectionHeroRight = styled.div``;

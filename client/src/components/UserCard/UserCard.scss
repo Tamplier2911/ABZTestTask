@@ -1,0 +1,83 @@
+/**
+    using fixed units is horrible :c
+*/
+/*
+
+.usercard {
+  //   box-shadow: 0rem 0.2rem 0.4rem #333;
+  //   width: 200px;
+  padding: 2rem 4rem;
+  text-align: center;
+
+  @media only screen and (max-width: 425px) {
+    padding: 2rem 6rem;
+  }
+
+  &__imgwrap {
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    margin: 0rem auto 1.5rem auto;
+
+    @media only screen and (max-width: 425px) {
+      width: 9rem;
+      height: 9rem;
+    }
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 2.6rem;
+    }
+
+    @media only screen and (max-width: 425px) {
+      font-size: 3rem;
+    }
+  }
+
+  &__occupation {
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: 425px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__email {
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    @media only screen and (max-width: 425px) {
+      font-size: 2rem;
+    }
+  }
+
+  &__phone {
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+
+    @media only screen and (max-width: 425px) {
+      font-size: 2rem;
+    }
+  }
+}
+
+*/

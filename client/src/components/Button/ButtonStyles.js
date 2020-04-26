@@ -1,12 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const ButtonComponent = styled.button`
+const sharedStyles = css`
   cursor: pointer;
   justify-self: start;
   width: 21rem;
   font-size: 1.8rem;
-  color: var(--cl-white);
-  background-color: var(--cl-primary);
   border: 0;
   border-radius: 0.5rem;
   padding: 1rem 2rem;
@@ -22,8 +20,24 @@ export const ButtonComponent = styled.button`
     width: 26rem;
     padding: 1.3rem 2rem;
   }
+`;
+
+export const ButtonComponent = styled.button`
+  ${sharedStyles}
+  color: var(--cl-white);
+  background-color: var(--cl-primary);
 
   &:hover {
     background-color: var(--cl-btn-hover);
+  }
+`;
+
+export const DisabledButtonComponent = styled.button`
+  ${sharedStyles}
+  color: var(--cl-btn-text);
+  background-color: var(--cl-btn-disabled);
+
+  &:hover {
+    background-color: var(--cl-btn-disabled);
   }
 `;

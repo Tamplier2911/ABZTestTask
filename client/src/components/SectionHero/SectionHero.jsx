@@ -1,4 +1,4 @@
-import "./SectionHero.scss";
+// import "./SectionHero.scss";
 import React from "react";
 
 // components
@@ -10,7 +10,11 @@ import Button from "../Button/Button";
 import getClient from "../../utils/getClient";
 
 // js rendering css
-import { SectionHeroContainer } from "./SectionHeroStyles";
+import {
+  SectionHeroContainer,
+  SectionHeroLeft,
+  SectionHeroRight,
+} from "./SectionHeroStyles";
 
 // constants
 import getRequiredContent from "./SectionHeroConstants";
@@ -20,7 +24,7 @@ const SectionHero = ({ width }) => {
   const client = getClient(width);
   return (
     <SectionHeroContainer client={client}>
-      <div className="hero__left">
+      <SectionHeroLeft>
         <HeadlineLarge text={header} />
         <Paragraph text={paragraph} />
         <Button
@@ -30,8 +34,8 @@ const SectionHero = ({ width }) => {
             /* add later */
           }}
         />
-      </div>
-      <div className="hero__right"></div>
+      </SectionHeroLeft>
+      <SectionHeroRight />
     </SectionHeroContainer>
   );
 };

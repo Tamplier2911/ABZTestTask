@@ -5,7 +5,7 @@ export const GenericLinkComponent = styled.a`
   &:visited {
     text-decoration: none;
     color: var(--cl-font);
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s, border 0.3s;
   }
 
   &:hover,
