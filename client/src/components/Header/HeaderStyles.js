@@ -18,7 +18,7 @@ export const HeaderContent = styled.div`
   display: grid;
   grid-template-columns: min-content 1fr;
   align-items: center;
-  max-width: 1170px;
+  max-width: 117rem;
   height: 60px;
   margin: 0 auto;
   padding: 0 3rem;

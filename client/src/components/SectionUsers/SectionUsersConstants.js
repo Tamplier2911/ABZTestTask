@@ -1,3 +1,10 @@
+import maxImg from "../../assets/jpg/user-maximillian-1x.jpg";
+import dolphImg from "../../assets/jpg/user-adolph-1x.jpg";
+import eliImg from "../../assets/jpg/user-elizabeth-1x.jpg";
+import alexImg from "../../assets/jpg/user-alexander-1x.jpg";
+import noahImg from "../../assets/jpg/user-noah-1x.jpg";
+import smithImg from "../../assets/jpg/user-smith-1x.jpg";
+
 const usersConstants = {
   title: "Our cheerful users",
   subtitle: "Attention! Sorting users by registration date",
@@ -8,50 +15,50 @@ export default usersConstants;
 
 export const userObjects = [
   {
-    _id: "3123",
-    photo: "https://bit.ly/2Kx0wDt",
+    _id: "jh9x",
+    photo: maxImg,
     name: "Maximillian",
-    occupation: "Leading specialist of the Controll Department",
+    position: "Leading specialist of the Controll Department",
     email: "controldepartment@gmail.com",
     phone: "+380 50 678 03 24",
   },
   {
     _id: "fdsa",
-    photo: "https://bit.ly/358nlqv",
+    photo: dolphImg,
     name: "Adloph Blaine Charles David Earl Matthew Matthew",
-    occupation: "Contextual advertising specialist",
+    position: "Contextual advertising specialist",
     email: "Adolph.blainecharles@gmail.com",
     phone: "+380 50 678 03 24",
   },
   {
     _id: "khgf",
-    photo: "https://bit.ly/3bGtrkh",
+    photo: eliImg,
     name: "Elizabeth",
-    occupation: "Frontend developer",
+    position: "Frontend developer",
     email: "elisabet.front@gmail.com",
     phone: "+380 50 678 03 24",
   },
   {
     _id: "chzf",
-    photo: "https://bit.ly/2Kx0wDt",
+    photo: alexImg,
     name: "Alexander Jayden",
-    occupation: "Backend developer",
+    position: "Backend developer",
     email: "alexander.back@gmail.com",
     phone: "+380 50 678 03 24",
   },
   {
     _id: "ljbc",
-    photo: "https://bit.ly/358nlqv",
+    photo: noahImg,
     name: "Noah",
-    occupation: "QA",
+    position: "QA",
     email: "noah1998@gmail.com",
     phone: "+380 50 678 03 24",
   },
   {
     _id: "9hgd",
-    photo: "https://bit.ly/3bGtrkh",
+    photo: smithImg,
     name: "Liamgrieverscasey Smith Wiam",
-    occupation: "Lead designer",
+    position: "Lead designer",
     email: "liamgrievescasey.smith@gmail.com",
     phone: "+380 50 678 03 24",
   },

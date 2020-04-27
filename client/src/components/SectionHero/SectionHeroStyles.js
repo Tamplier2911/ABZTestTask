@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import bgdesk from "../../assets/png/banner-desktop-min.jpg";
-import bgtab from "../../assets/png/banner-tablet-min.jpg";
-import bgmob from "../../assets/png/banner-mobile-min.jpg";
+import bgdesk from "../../assets/jpg/banner-desktop-min.jpg";
+import bgtab from "../../assets/jpg/banner-tablet-min.jpg";
+import bgmob from "../../assets/jpg/banner-mobile-min.jpg";
 
 const getProperImage = (props) => {
   const { client } = props;

@@ -43,6 +43,21 @@
   --cl-btn-hover: #c71400;
   --cl-btn-disabled: #d7d7d7;
   --cl-btn-text: #a6a5a5;
+
+  // FORM
+  // form input
+  --cl-form-err: #fd0505;
+  --cl-form-focus: #d8d8d8;
+  --cl-form-outline: #83bfff;
+  --cl-form-shadow: #83bfff;
+  --cl-form-outline-err: #e96363;
+  --cl-form-outline-err-shadow: #e96363;
+  // radio input
+  --cl-radio-checked-bg: #007bff;
+  --cl-radio-unchecked-bg: #d8d8d8;
+  // file input
+  --cl-file-button: #ebebeb;
+  --cl-file-button-hv: #d8d8d8;
 }
 
 // Z INDEXES:

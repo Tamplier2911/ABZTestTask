@@ -1,4 +1,4 @@
-import "./LandingPage.scss";
+// import "./LandingPage.scss";
 import React from "react";
 
 // components

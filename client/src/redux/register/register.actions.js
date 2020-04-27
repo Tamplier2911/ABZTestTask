@@ -7,6 +7,9 @@ const {
   GET_REGISTRATION_TOKEN_START,
   GET_REGISTRATION_TOKEN_SUCCESS,
   GET_REGISTRATION_TOKEN_FAILURE,
+  GET_POSITIONS_START,
+  GET_POSITIONS_SUCCESS,
+  GET_POSITIONS_FAILURE,
 } = registerTypes;
 
 export const registerStart = (userCredentials) => ({
@@ -34,5 +37,19 @@ export const getRegistrationTokenSuccess = (token) => ({
 
 export const getRegistrationTokenFailure = (errorMessage) => ({
   type: GET_REGISTRATION_TOKEN_FAILURE,
+  payload: errorMessage,
+});
+
+export const getPositionsStart = () => ({
+  type: GET_POSITIONS_START,
+});
+
+export const getPositionsSuccess = (positions) => ({
+  type: GET_POSITIONS_SUCCESS,
+  payload: positions,
+});
+
+export const getPositionsFailure = (errorMessage) => ({
+  type: GET_POSITIONS_FAILURE,
   payload: errorMessage,
 });

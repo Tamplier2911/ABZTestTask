@@ -1,14 +1,16 @@
-import "./Footer.scss";
+// import "./Footer.scss";
 import React from "react";
 
 // js rendering css
-import {} from "./FooterStyles";
+import { FooterContainer, FooterContent } from "./FooterStyles";
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div>Footer</div>
-    </footer>
+    <FooterContainer>
+      <FooterContent>
+        &copy; abz.agency specially for the test task
+      </FooterContent>
+    </FooterContainer>
   );
 };
 

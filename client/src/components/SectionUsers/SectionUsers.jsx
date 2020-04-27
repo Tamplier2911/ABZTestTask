@@ -26,6 +26,7 @@ import {
 
 // constants
 import usersConstants from "./SectionUsersConstants";
+// import usersConstants, { userObjects } from "./SectionUsersConstants";
 
 const SectionUsers = ({ users, fetchMoreUsersStart, nextPage }) => {
   const { title, subtitle, btn } = usersConstants;
@@ -36,6 +37,9 @@ const SectionUsers = ({ users, fetchMoreUsersStart, nextPage }) => {
         <HeadlineSmall text={subtitle} />
       </SectionUsersTop>
       <SectionUsersMid>
+        {/* {userObjects.map((user) => {
+          return <UserCard {...user} key={user._id} />;
+        })} */}
         {users.map((user) => {
           return <UserCard {...user} key={user.id} />;
         })}
