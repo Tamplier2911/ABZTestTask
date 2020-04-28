@@ -150,7 +150,6 @@ const RegisterForm = ({ positions, registerStart, isLoading }) => {
         label={"Photo"}
         error={photoErr}
         id={"fileinput-register"}
-        required
       />
       <RegisterFormSubmit
         type="submit"

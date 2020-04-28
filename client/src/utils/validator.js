@@ -57,22 +57,28 @@ const validator = (userCredentials) => {
     errors.positionErr = "Please, choose desired job.";
   }
 
-  //  user photo should be jpeg format
-  if (photo.size / 1024 / 1024 > 5) {
-    failed = true;
-    errors.photoErr = "Photo must be 5MB at max.";
-  }
+  // user photo must exist
+  if (photo) {
+    //  user photo should be jpeg format
+    if (photo.size / 1024 / 1024 > 5) {
+      failed = true;
+      errors.photoErr = "Photo must be 5MB at max.";
+    }
 
-  // user photo must not exceed 5MB
-  if (!photo.type.endsWith("/jpeg")) {
-    failed = true;
-    errors.photoErr = "Photo must be jpeg format.";
-  }
+    // user photo must not exceed 5MB
+    if (!photo.type.endsWith("/jpeg")) {
+      failed = true;
+      errors.photoErr = "Photo must be jpeg format.";
+    }
 
-  // user photo must be at least 70x70px
-  if (photo.height < 70 || photo.width < 70) {
+    // user photo must be at least 70x70px
+    if (photo.height < 70 || photo.width < 70) {
+      failed = true;
+      errors.photoErr = "Photo must be at lest 70x70 px.";
+    }
+  } else {
     failed = true;
-    errors.photoErr = "Photo must be at lest 70x70 px.";
+    errors.photoErr = "Please, upload your photo..";
   }
 
   /*
