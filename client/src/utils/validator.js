@@ -40,6 +40,7 @@ const validator = (userCredentials) => {
     errors.emailErr = "Email must match required format.";
   }
 
+  // email must be 2-100 characters
   if (email.length < 2 || email.length > 100) {
     failed = true;
     errors.emailErr = "Email must be 2-100 chars long.";
@@ -59,13 +60,13 @@ const validator = (userCredentials) => {
 
   // user photo must exist
   if (photo) {
-    //  user photo should be jpeg format
+    // user photo must not exceed 5MB
     if (photo.size / 1024 / 1024 > 5) {
       failed = true;
       errors.photoErr = "Photo must be 5MB at max.";
     }
 
-    // user photo must not exceed 5MB
+    //  user photo should be jpeg format
     if (!photo.type.endsWith("/jpeg")) {
       failed = true;
       errors.photoErr = "Photo must be jpeg format.";
@@ -78,7 +79,7 @@ const validator = (userCredentials) => {
     }
   } else {
     failed = true;
-    errors.photoErr = "Please, upload your photo..";
+    errors.photoErr = "Please, upload your photo.";
   }
 
   /*
