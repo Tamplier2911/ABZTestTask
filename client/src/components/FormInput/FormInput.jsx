@@ -13,8 +13,13 @@ import {
 const FormInput = ({ onInputChange, label, error, ...otherProps }) => {
   return (
     <FormInputContainer>
-      {label ? <FormInputLabel>{label}</FormInputLabel> : null}
+      {label ? (
+        <FormInputLabel htmlFor={`form-${otherProps.name}`}>
+          {label}
+        </FormInputLabel>
+      ) : null}
       <FormInputElement
+        id={`form-${otherProps.name}`}
         err={error}
         onChange={(e) => onInputChange(e)}
         {...otherProps}
