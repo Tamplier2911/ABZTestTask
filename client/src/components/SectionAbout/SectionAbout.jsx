@@ -1,5 +1,6 @@
 // import "./SectionAbout.scss";
 import React from "react";
+import jump from "jump.js";
 
 // components
 import HeadlineMedium from "../HeadlineMedium/HeadlineMedium";
@@ -20,10 +21,10 @@ import {
 // constants
 import aboutConstants from "./SectionAboutConstants";
 
-const SectionAbout = () => {
+const SectionAbout = ({ id }) => {
   const { header, headerSub, block_1, block_2, link } = aboutConstants;
   return (
-    <SectionAboutContainer>
+    <SectionAboutContainer id={id}>
       <SectionAboutHeader>
         <HeadlineMedium text={header} />
       </SectionAboutHeader>
@@ -35,7 +36,14 @@ const SectionAbout = () => {
           <HeadlineSmall text={headerSub} />
           <Paragraph text={block_1} />
           <Paragraph text={block_2} />
-          <GenericLink path={"/"} text={link} />
+          <GenericLink
+            path={"/"}
+            text={link}
+            action={(e) => {
+              e.preventDefault();
+              jump("#register", { offset: 100 });
+            }}
+          />
         </SectionAboutText>
       </SectionAboutContent>
     </SectionAboutContainer>

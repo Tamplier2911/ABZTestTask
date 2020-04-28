@@ -23,7 +23,7 @@ import getWindowDimensions from "./utils/getWindowDimensions";
 import { debounce } from "./utils/debounce";
 
 // global styles
-import {} from "./indexStyles";
+import { GlobalStyles } from "./indexStyles";
 
 // js rendering css
 import { AppContainer, AppMain } from "./AppStyles";
@@ -47,6 +47,7 @@ function App({ fetchUsersStart, usersLength }) {
 
   return (
     <AppContainer>
+      <GlobalStyles />
       <Header width={width} />
       <Sidenav />
       <Modal />

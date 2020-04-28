@@ -4,8 +4,14 @@ import React, { useEffect } from "react";
 // redux
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
-import { selectPositions } from "../../redux/register/register.selectors";
-import { getPositionsStart } from "../../redux/register/register.actions";
+import {
+  selectPositions,
+  selectRegisterToken,
+} from "../../redux/register/register.selectors";
+import {
+  getPositionsStart,
+  getRegistrationTokenStart,
+} from "../../redux/register/register.actions";
 
 // components
 import HeadlineMedium from "../HeadlineMedium/HeadlineMedium";
@@ -22,15 +28,22 @@ import {
 // constants
 import registerData from "./SectionRegisterConstants";
 
-const SectionRegister = ({ getPositionsStart, positions }) => {
+const SectionRegister = ({
+  getPositionsStart,
+  positions,
+  getRegistrationTokenStart,
+  token,
+  id,
+}) => {
   useEffect(() => {
-    if (positions.length === 0) getPositionsStart();
-  }, []);
+    if (!positions.length) getPositionsStart();
+    if (!token.length) getRegistrationTokenStart();
+  }, [getPositionsStart]);
 
   const { title, subtitle } = registerData;
 
   return (
-    <SectionRegisterContainer>
+    <SectionRegisterContainer id={id}>
       <SectionRegisterTop>
         <HeadlineMedium text={title} />
         <HeadlineSmall text={subtitle} />
@@ -44,6 +57,10 @@ const SectionRegister = ({ getPositionsStart, positions }) => {
 
 const mapStateToProps = createStructuredSelector({
   positions: selectPositions,
+  token: selectRegisterToken,
 });
 
-export default connect(mapStateToProps, { getPositionsStart })(SectionRegister);
+export default connect(mapStateToProps, {
+  getPositionsStart,
+  getRegistrationTokenStart,
+})(SectionRegister);

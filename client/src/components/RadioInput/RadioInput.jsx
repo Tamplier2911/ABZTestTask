@@ -16,7 +16,9 @@ const RadioInput = ({ onInputChange, label, position, ...otherProps }) => {
       <RadioInputElement onChange={(e) => onInputChange(e)} {...otherProps} />
       <RadioCheckmark checked={checked} />
       {label ? (
-        <RadioInputLabel htmlFor={otherProps.id}>{label}</RadioInputLabel>
+        <RadioInputLabel htmlFor={otherProps.id} checked={checked}>
+          {label}
+        </RadioInputLabel>
       ) : null}
     </RadioInputContainer>
   );

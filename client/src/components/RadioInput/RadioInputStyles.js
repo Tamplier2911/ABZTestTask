@@ -11,6 +11,14 @@ const sharedStyles = css`
   transform: translate(-50%, -50%);
 `;
 
+const getCheckedLabel = (props) => {
+  const { checked } = props;
+  if (checked) {
+    return `color: var(--cl-primary);`;
+  }
+  return `color: var(--cl-font);`;
+};
+
 const getCheckedStyle = (props) => {
   const { checked } = props;
 
@@ -59,4 +67,10 @@ export const RadioCheckmark = styled.div`
 export const RadioInputLabel = styled.label`
   cursor: pointer;
   justify-self: start;
+  transition: color 0.3s;
+  ${getCheckedLabel}
+
+  &:hover {
+    color: var(--cl-primary);
+  }
 `;

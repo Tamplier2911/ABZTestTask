@@ -13,10 +13,10 @@ import { LandingPageContainer } from "./LandingPageStyles";
 const LandingPge = ({ width }) => {
   return (
     <LandingPageContainer>
-      <SectionHero width={width} />
-      <SectionAbout />
-      <SectionUsers />
-      <SectionRegister />
+      <SectionHero width={width} id={"hero"} />
+      <SectionAbout id={"about"} />
+      <SectionUsers id={"users"} />
+      <SectionRegister id={"register"} />
     </LandingPageContainer>
   );
 };

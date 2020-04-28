@@ -30,11 +30,6 @@ import sidenavConstants from "./SidenavConstants";
 const Sidenav = ({ sidenavHidden, toggleSidenav }) => {
   const { b1, b2, b3 } = sidenavConstants;
 
-  const prevDefToggle = (e) => {
-    e.preventDefault();
-    toggleSidenav();
-  };
-
   return ReactDOM.createPortal(
     <SidenavContainer hidden={sidenavHidden} onClick={() => toggleSidenav()}>
       <SidenavWindow onClick={(e) => e.stopPropagation()}>
@@ -44,10 +39,17 @@ const Sidenav = ({ sidenavHidden, toggleSidenav }) => {
         <SidenavTop>
           <SidenavUL>
             {b1.map((link) => {
-              const { id, path, text } = link;
+              const { id, path, text, action } = link;
               return (
                 <SidenavLI key={id}>
-                  <GenericLink path={path} text={text} action={prevDefToggle} />
+                  <GenericLink
+                    path={path}
+                    text={text}
+                    action={(e) => {
+                      action(e);
+                      toggleSidenav();
+                    }}
+                  />
                 </SidenavLI>
               );
             })}
@@ -56,10 +58,17 @@ const Sidenav = ({ sidenavHidden, toggleSidenav }) => {
         <SidenavMid>
           <SidenavUL>
             {b2.map((link) => {
-              const { id, path, text } = link;
+              const { id, path, text, action } = link;
               return (
                 <SidenavLI key={id}>
-                  <GenericLink path={path} text={text} action={prevDefToggle} />
+                  <GenericLink
+                    path={path}
+                    text={text}
+                    action={(e) => {
+                      action(e);
+                      toggleSidenav();
+                    }}
+                  />
                 </SidenavLI>
               );
             })}
@@ -68,10 +77,17 @@ const Sidenav = ({ sidenavHidden, toggleSidenav }) => {
         <SidenavBot>
           <SidenavUL>
             {b3.map((link) => {
-              const { id, path, text } = link;
+              const { id, path, text, action } = link;
               return (
                 <SidenavLI key={id}>
-                  <GenericLink path={path} text={text} action={prevDefToggle} />
+                  <GenericLink
+                    path={path}
+                    text={text}
+                    action={(e) => {
+                      action(e);
+                      toggleSidenav();
+                    }}
+                  />
                 </SidenavLI>
               );
             })}

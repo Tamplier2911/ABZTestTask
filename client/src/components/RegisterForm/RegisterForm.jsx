@@ -1,6 +1,12 @@
 // import "./RegisterForm.scss";
 import React, { useState } from "react";
 
+// redux
+import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
+import { selectRegisterIsLoading } from "../../redux/register/register.selectors";
+import { registerStart } from "../../redux/register/register.actions";
+
 // components
 import FormInput from "../FormInput/FormInput";
 import RadioInput from "../RadioInput/RadioInput";
@@ -14,18 +20,21 @@ import {
   RegisterFormSubmit,
 } from "./RegisterFormStyles";
 
-const RegisterForm = ({ positions }) => {
+// utils
+import validator, { cleanState } from "../../utils/validator";
+
+const RegisterForm = ({ positions, registerStart, isLoading }) => {
   const [userCredentials, setUserCredentials] = useState({
     name: "",
     nameErr: "",
     email: "",
-    emailErr: "Email does not match pattern.",
+    emailErr: "",
     phone: "",
-    phoneErr: "Phone does not match pattern.",
+    phoneErr: "",
     position: "",
-    positionErr: "Position must be chosen.",
+    positionErr: "",
     photo: null,
-    photoErr: "Please chose image to download.",
+    photoErr: "",
   });
   const {
     name,
@@ -42,16 +51,41 @@ const RegisterForm = ({ positions }) => {
 
   const onInputChange = (e) => {
     const { name, value, files } = e.target;
-    if (name === "photo")
-      return setUserCredentials({ ...userCredentials, [name]: files[0] });
+    if (name === "photo" && files[0]) {
+      // create reader
+      const reader = new FileReader();
+      // read content of file
+      reader.readAsDataURL(files[0]);
+      reader.onload = (e) => {
+        // initiate the JavaScript Image object
+        const image = new Image();
+        // set the Base64 string return from FileReader as source
+        image.src = e.target.result;
+        // validate the File Height and Width
+        image.onload = () => {
+          files[0].width = image.width;
+          files[0].height = image.height;
+          setUserCredentials({ ...userCredentials, [name]: files[0] });
+        };
+      };
+      // return setUserCredentials({ ...userCredentials, [name]: files[0] });
+      return;
+    }
     return setUserCredentials({ ...userCredentials, [name]: value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // validation and error handling here
-    console.log(userCredentials);
-    console.log("Submitted!");
+    const { failed, errors } = validator(userCredentials);
+    if (failed) {
+      return setUserCredentials({ ...userCredentials, ...errors });
+    }
+
+    // clean up fields if registration is passed
+    setUserCredentials(cleanState());
+
+    // perform registration action
+    registerStart(userCredentials);
   };
 
   return (
@@ -118,9 +152,16 @@ const RegisterForm = ({ positions }) => {
         id={"fileinput-register"}
         required
       />
-      <RegisterFormSubmit type="submit" value="Sign up now" />
+      <RegisterFormSubmit
+        type="submit"
+        value={isLoading ? "Processing..." : "Sign up now"}
+      />
     </RegisterFormElement>
   );
 };
 
-export default RegisterForm;
+const mapStateToProps = createStructuredSelector({
+  isLoading: selectRegisterIsLoading,
+});
+
+export default connect(mapStateToProps, { registerStart })(RegisterForm);

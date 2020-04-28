@@ -1,17 +1,27 @@
 import styled from "styled-components";
 
 import bgdesk from "../../assets/jpg/banner-desktop-min.jpg";
-import bgtab from "../../assets/jpg/banner-tablet-min.jpg";
+import bgdeskRet from "../../assets/jpg/banner-desktop-retina.jpg";
+import bgtab from "../../assets/jpg/banner-tablet-retina.jpg";
+import bgtabRet from "../../assets/jpg/banner-tablet-min.jpg";
 import bgmob from "../../assets/jpg/banner-mobile-min.jpg";
+import bgmobRet from "../../assets/jpg/banner-mobile-retina.jpg";
 
 const getProperImage = (props) => {
-  const { client } = props;
+  const { client, retina } = props;
+  // console.log(client, retina);
   if (client === "desktop") {
-    return `background-image: url(${bgdesk});`;
+    return retina
+      ? `background-image: url(${bgdeskRet});`
+      : `background-image: url(${bgdesk});`;
   } else if (client === "tablet") {
-    return `background-image: url(${bgtab});`;
+    return retina
+      ? `background-image: url(${bgtabRet});`
+      : `background-image: url(${bgtab});`;
   }
-  return `background-image: url(${bgmob});`;
+  return retina
+    ? `background-image: url(${bgmobRet});`
+    : `background-image: url(${bgmob});`;
 };
 
 export const SectionHeroContainer = styled.section`

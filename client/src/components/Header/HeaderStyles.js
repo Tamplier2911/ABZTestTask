@@ -1,8 +1,19 @@
 import styled from "styled-components";
+import Headeroom from "react-headroom";
 
 // svg
 import { ReactComponent as LogoSVG } from "../../assets/svg/logo.svg";
 import { ReactComponent as MenuSVG } from "../../assets/svg/menu icon.svg";
+
+export const StickyHead = styled(Headeroom)`
+  grid-column: full-start / full-end;
+  height: 60px;
+  // box-shadow: 0rem 0.2rem 0.4rem var(--cl-shadow);
+
+  @media only screen and (max-width: 360px) {
+    height: 40px;
+  }
+`;
 
 export const HeaderContainer = styled.header`
   grid-column: full-start / full-end;
@@ -39,6 +50,7 @@ export const HeaderLogo = styled.div`
 `;
 
 export const HeaderLogoSVG = styled(LogoSVG)`
+  cursor: pointer;
   height: 4rem;
   //   width: 20rem;
 `;

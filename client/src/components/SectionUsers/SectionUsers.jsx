@@ -28,10 +28,10 @@ import {
 import usersConstants from "./SectionUsersConstants";
 // import usersConstants, { userObjects } from "./SectionUsersConstants";
 
-const SectionUsers = ({ users, fetchMoreUsersStart, nextPage }) => {
+const SectionUsers = ({ users, fetchMoreUsersStart, nextPage, id }) => {
   const { title, subtitle, btn } = usersConstants;
   return (
-    <SectionUsersContainer>
+    <SectionUsersContainer id={id}>
       <SectionUsersTop>
         <HeadlineMedium text={title} />
         <HeadlineSmall text={subtitle} />

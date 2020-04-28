@@ -1,5 +1,7 @@
 // import "./SectionHero.scss";
 import React from "react";
+import jump from "jump.js";
+import { useMediaQuery } from "react-responsive";
 
 // components
 import HeadlineLarge from "../HeadlineLarge/HeadlineLarge";
@@ -19,20 +21,19 @@ import {
 // constants
 import getRequiredContent from "./SectionHeroConstants";
 
-const SectionHero = ({ width }) => {
+const SectionHero = ({ width, id }) => {
   const { header, paragraph, btn } = getRequiredContent(width);
   const client = getClient(width);
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
   return (
-    <SectionHeroContainer client={client}>
+    <SectionHeroContainer client={client} retina={isRetina} id={id}>
       <SectionHeroLeft>
         <HeadlineLarge text={header} />
         <Paragraph text={paragraph} />
         <Button
           text={btn}
           type={"button"}
-          action={() => {
-            /* add later */
-          }}
+          action={() => jump("#register", { offset: 100 })}
         />
       </SectionHeroLeft>
       <SectionHeroRight />

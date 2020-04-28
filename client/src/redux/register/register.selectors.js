@@ -11,3 +11,8 @@ export const selectPositions = createSelector(
   [selectRegister],
   (register) => register.positions
 );
+
+export const selectRegisterIsLoading = createSelector(
+  [selectRegister],
+  (register) => register.isLoading
+);

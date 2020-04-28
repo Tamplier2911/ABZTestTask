@@ -6,7 +6,13 @@ import { GenericLinkComponent } from "./GenericLinkStyles";
 const GenericLink = ({ path, text, action }) => (
   <GenericLinkComponent
     href={path}
-    onClick={(e) => (action ? action(e) : () => {})}
+    onClick={(e) =>
+      action
+        ? action(e)
+        : (e) => {
+            e.preventDefault();
+          }
+    }
   >
     {text}
   </GenericLinkComponent>
