@@ -38,7 +38,7 @@ export const RegisterFormRadioError = styled.span`
   font-size: 1.2rem;
 `;
 
-export const RegisterFormSubmit = styled.input`
+export const RegisterFormSubmit = styled.button`
   cursor: pointer;
   justify-self: center;
   width: 21rem;

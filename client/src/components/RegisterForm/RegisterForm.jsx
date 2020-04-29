@@ -151,10 +151,13 @@ const RegisterForm = ({ positions, registerStart, isLoading }) => {
         error={photoErr}
         id={"fileinput-register"}
       />
-      <RegisterFormSubmit
+      <RegisterFormSubmit type="submit">
+        {isLoading ? "Processing..." : "Sign up now"}
+      </RegisterFormSubmit>
+      {/* <RegisterFormSubmit
         type="submit"
         value={isLoading ? "Processing..." : "Sign up now"}
-      />
+      /> */}
     </RegisterFormElement>
   );
 };
